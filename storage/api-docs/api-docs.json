@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "SERA Backend API",
+        "title": "SERA Backend TEST API",
         "description": "API for managing users and addresses",
         "termsOfService": "http://example.com/terms/",
         "contact": {

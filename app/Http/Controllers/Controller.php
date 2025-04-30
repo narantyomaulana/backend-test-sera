@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 /**
  * @OA\Info(
  *     version="1.0.0",
- *     title="SERA Backend API",
+ *     title="SERA Backend TEST API",
  *     description="API for managing users and addresses",
  *     termsOfService="http://example.com/terms/",
  *     @OA\Contact(
