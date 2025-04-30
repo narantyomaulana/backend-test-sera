@@ -53,7 +53,7 @@ class ListUsers
     public function __invoke(Request $request): JsonResponse
     {
         $perPage = $request->query('per_page', 15);
-        $users = User::paginate($perPage);
+        $users = User::with('addresses')->paginate($perPage);
 
         return response()->json([
             'data' => $users->items(),

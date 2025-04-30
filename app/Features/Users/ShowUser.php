@@ -43,7 +43,7 @@ class ShowUser
      */
     public function __invoke(Request $request, $userId): JsonResponse
     {
-        $user = User::find($userId);
+        $user = User::with('addresses')->find($userId);
 
         if (!$user) {
             return response()->json([

@@ -2,12 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Model
 {
     protected $fillable = [
         'name',
@@ -18,5 +16,12 @@ class User extends Authenticatable
     public function addresses(): HasMany
     {
         return $this->hasMany(Address::class);
+    }
+
+    protected static function booted()
+    {
+        static::deleting(function ($user) {
+            $user->addresses()->delete();
+        });
     }
 }
